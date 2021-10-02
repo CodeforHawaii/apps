@@ -2,7 +2,7 @@
 <html lang="en-us">
 <head>
 <meta charset="utf-8">
-<title>Community Site</title>
+<title>Code for Hawaii</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
 
@@ -13,16 +13,21 @@
 <script type="text/javascript" src="../../localsite/js/showdown.min.js" id="/localsite/js/showdown.min.js"></script>
 <script type="text/javascript" src="../js/apps-menus.js" id="/apps/js/apps-menus.js"></script>
 <script type="text/javascript" src="../js/apps-impact.js" id="/apps/js/apps-impact.js"></script>
+<script type="text/javascript" src="../js/map.js" id="/apps/js/map.js"></script>
+<!-- CFHI - probably want to replace API key w/variable later. Also, I think this key's requests are used up. Not sure what costs, etc. will be  -->
+<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqsxv6Rm2oFcUSREI_fA9PO8NFRcxeYJM&callback=initMap"></script>
 
 <!-- Set custom app values -->
 <script>
   if(typeof param=='undefined'){ var param={}; }
   param.display = "everything"
-  param.lat = 37
-  param.lon = -95.7
-  param.state = "IA"
-  param.set = "air"
-  param.indicators = "GHG,GCC,MGHG,OGHG,HRSP,OZON,SMOG,HAPS"
+  param.titleArray = ["Code","for","Hawaii"]
+  // param.headerLogo = "<img src='/apps/smm/img/epa-header-logo.png' style='width:280px'>"; CFHI - can replace w/our logo
+  param.lat = 21.133041300608269;
+  param.lon = -157.212433874675298;
+  param.state = "HI"
+  param.set = "energy"
+  param.indicators = "ENRG,NNRG,RNRG"
   // More params: https://model.earth/localsite
 
 
@@ -56,6 +61,8 @@
 
 
 <script>
+// If edits to your README.md don't appear, clear your cache for prior 24 hours.
+// Don’t clear more than 24hrs or you’ll wipe out your saved passwords and cookie settings.
 loadMarkdown("README.md", "readmeDiv", "_parent");
 loadMarkdown("ABOUT.md", "aboutDiv", "_parent");
 renderImpactWidget();
@@ -106,23 +113,8 @@ The .displayOnload divs are displayed when the base.css file loads. This prevent
     
     <div class="hero-text">
 
-      <div style="font-size:60px; line-height: 1em; font-weight:800">Your<br>Community</div><br>
-      <div style="font-size:28px; line-height: 1.2em; font-weight:600">
-        Copy base folder and<br>add your local settings
-      </div><br>
-
-      <div style="font-size:20px; line-height: 1.2em;">
+      <div style="font-size:60px; line-height: 1em; font-weight:800">Code for<br>Hawaii</div><br>
         <br>
-
-        <div style="font-size:18px;">
-
-        <a href="../../community/challenge/" class="btn btn-success" style="text-shadow: none; border:2px solid #ddd">Join the Web Challenge</a><br> 
-
-        <a href="../../community/challenge/how/" class="btn btn-primary" style="text-shadow: none; border:2px solid #ddd">How to Create a Winning Entry</a><br>
-
-        <a href="../../community/projects/" class="btn btn-warning" style="text-shadow: none; border:2px solid #ddd">Project Coding and Design Areas</a><br>
-
-        
         </div>
 
         <br>
@@ -130,7 +122,7 @@ The .displayOnload divs are displayed when the base.css file loads. This prevent
     </div>
 
 
-    <div id="hero-rect" style="max-width: 740px; float:left">
+    <!-- <div id="hero-rect" style="max-width: 740px; float:left">
       
       <div style="font-size:22px; margin-top:14px; margin-bottom:18px; font-weight:500">Getting Started...</div>
 
@@ -147,43 +139,36 @@ The .displayOnload divs are displayed when the base.css file loads. This prevent
         <a href="#mapview=counties" onclick="$('#filterClickLocation').click();return false;">Select one or more counties</a><br>
       </div>
 
-    </div>
-
-    <div id="hero-mini" style="float:left; width:100%; max-width: 740px;">
-      
-      <div id="impact-widget-horizontal"></div>
-
-      <div id="insertImpactIcons"></div>
-      <div style="clear:both"></div><br>
-
-    </div>
-
-
-
+    </div> -->
   </div>
 
 </div>
 </div>
 
+
 <div style="clear:both">
 </div>
 
 <div class="content contentpadding">
-
-    <div id="readmeDiv"></div>
-
-    <div id="dataHeader"></div>
-    <div id="dataDisplay"></div>
-    <br>
-
-    <h2>Shared Sections</h2>
-    <div id="menuImages" style="display: none;"></div>
+  
+  <div id="readmeDiv"></div>
+  
+  <div id="dataHeader"></div>
+  <div id="dataDisplay"></div>
+  <br>
+  
+    <h2>A Community Effort</h2>
+    <div style="margin: 24px;">
+      <div id="map" style="height:500px; max-width:900px; margin:0 auto;"></div>
+    </div>
+    <!-- <h2>Shared Sections</h2>
+    <div id="menuImages" style="display: none;"></div> -->
     <div style="clear:both"></div><br>
-
+    
     <div id="aboutDiv"></div>
-
+    
 </div>
-
+  
 
 </body>
 </html>
