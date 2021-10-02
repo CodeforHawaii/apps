@@ -1,5 +1,5 @@
 let map;
-const src = './data/doc.geojson';
+const src = '../data/doc.geojson';
 
 function getWebsiteUrl(url) {
   if (!url || !url.length || !url.includes('.')) return '';

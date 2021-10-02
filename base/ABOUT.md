@@ -1,4 +1,5 @@
 ## About our Sustainable Community Project
+CFHI - to fill content
 
 **Project Impact**
 
@@ -16,7 +17,7 @@ Our project includes the following to make information and tools clear, accessib
 
 **Implementation**
 
-Our community sustainability page provides a new functional solution in the area(s) of...
+Our community sustainability page provides a new functional solution in the area(s) of... 
 
 
 **Integration**
