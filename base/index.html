@@ -26,9 +26,11 @@
   // More params: https://model.earth/localsite
 
 
-  // School app menu
+  // Shared Sections menu
   if(typeof menu=='undefined'){ var menu={}; }
+  // IMPORTANT: The names on this line must include the param's below it.
   menu = {"home":[],"composting":[],"biodiesel":[]}
+
   menu.home.img = "/apps/school/img/hero/ses.jpg"
   menu.home.page = "/apps/school/"
 
@@ -38,22 +40,24 @@
   menu.biodiesel.img = "/apps/school/img/hero/biodiesel.jpg"
   menu.biodiesel.page = "/apps/biodiesel/"
 
-  //menu.meetups.img = "/apps/school/img/hero/conference.jpg"
-  //menu.meetups.page = "/apps/events/"
-  //menu.meetups.title = "Climate Change Conference"
+  showHeroMenu("feature", menu, "my_community_site")
 
-  showImpactWidget("land", menu, "loyola_chicago")
   $(document).ready(function() {
+    showImpactWidget("land", menu, "my_community_site") // This waits for the DOM to load
+    // Some of your javascript will need to reside in this Ready statement 
+    // This allows the HTML to load before manipulating ID elements on the page below.
+    // Example, hide the verticle menu widget:
     //$("#hero-mini").hide();
   });
-
-  showHeroMenu("feature", menu, "loyola_chicago")
+  
 </script>
 
 <script type="text/javascript" src="../../localsite/js/localsite.js"></script>
 
 
 <script>
+// If edits to your README.md don't appear, clear your cache for prior 24 hours.
+// Don’t clear more than 24hrs or you’ll wipe out your saved passwords and cookie settings.
 loadMarkdown("README.md", "readmeDiv", "_parent");
 loadMarkdown("ABOUT.md", "aboutDiv", "_parent");
 renderImpactWidget();
@@ -81,9 +85,21 @@ renderImpactWidget();
 
 
 <body>
+<!--
+State images are refreshed by localsite/js/map-filters.js when state=XX changes in the URL. 
 
+To show a custom hero image, paste the following css above in the style tag.
+This will override the initial state image.
 
-<!-- State image refreshed by localsite/js/map-filters.js. Displayed once base.css loads. -->
+#hero-landscape-image {
+    background-image: url('../school/img/hero/ses.jpg') !important;
+}
+
+Another option is to rename the css snipped above to #hero-landscape-image-local and also rename the hero-landscape-image id below. Then you can remove !important from the snippet.
+
+The hidden hero images are displayed once localsite/css/base.css loads. 
+The .displayOnload divs are displayed when the base.css file loads. This prevents the page from flickering while loading.
+-->
 <div id="hero_holder">
 <div id="hero-landscape-image" class="bgimg displayOnload" style="display:none; background-position: 0 54px;">
 
@@ -126,7 +142,7 @@ renderImpactWidget();
       2. Select one of the six main impact areas below. Air, Water, Land, Energy...<br><br>
       3. Choose one or more commodities in the center column of the input-output chart.<br><br>
       4. Adjust sliders to view potential impacts to changes in commodity levels.<br><br>
-      5. Copy the parameters from the URL into a copy of one of the <a href="../" style="white-space:nowrap">index.html pages</a>.<br><br>
+      5. Copy from the URL and <a href="../../localsite/#parameters">format the parameters</a> in a copy of one of the <a href="../" style="white-space:nowrap">index.html pages</a>.<br><br>
 
 
       <div id="choose-counties" style="display:none">

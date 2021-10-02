@@ -45,8 +45,15 @@ function showHeroMenu(menuType, heroMenu, site) {
       $.each(heroMenu, function (key, val) {
             //alert(key + val);
             //alert(heroMenu[key].img);
+            let pageURL = "";
+            if (val.page) {
+                pageURL = val.page;
+            } else {
+                pageURL = val.img;
+            }
             menuImages += "<div>";
-            menuImages += "<div style='max-height:110px;overflow:hidden'><a href='" + val.img + "'><img src='" + val.img + "'></a></div>";
+
+            menuImages += "<div style='max-height:110px;overflow:hidden'><a href='" + pageURL + "'><img src='" + val.img + "'></a></div>";
             menuImages += key.toUpperCase();
             menuImages += "</div>";
       });

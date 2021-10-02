@@ -35,6 +35,7 @@
   $(document).ready(function() {
     $("#menuImages").html(menuImages);
   });
+  loadMarkdown("README.md", "readmeDiv", "_parent");
 </script>
 
 <script type="text/javascript" src="../../localsite/js/localsite.js"></script>
@@ -125,21 +126,11 @@
   </div>
 </div>
 
-<div style="clear:both">
-</div>
-
-<br><br><br>
-
-<div class="content contentpadding">
+<div style="clear:both" class="content contentpadding">
+    <div id="readmeDiv"></div>
     <div id="dataHeader"></div>
     <div id="dataDisplay"></div>
 </div>
-
-
-
-<div id="readmeDiv"></div>
-
-
 
 
 <div>
