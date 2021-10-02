@@ -73,3 +73,7 @@
 #hero-mini {
 
 }
+#map {
+  overflow: hidden;
+  border: thin solid #333;
+}
