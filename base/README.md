@@ -5,7 +5,7 @@ This community page is an example of how the dataset can be utilized once downlo
 
 The dataset referenced here was compiled by [KUA](http://kuahawaii.org/), [Consuelo Foundation](http://consuelo.org/), and [DOFAW](https://dlnr.hawaii.gov/dofaw/).
 
-Excerpted from the work in Progress public site:
+Excerpted from the work -in-progress public site:
 >*PROJECT INTRO:
 >ʻĀINA translated from ’Ōlelo Hawaiʻi (Hawaiian language) into English means land, or that which feeds. “VIS” is short for vision, and also means power; in relation to; as compared with; face-to-face with; together. This dataset named ʻĀina Vision is about ʻāina power, ʻāina face-to-face, and ʻāina together.*
 
